@@ -33,4 +33,4 @@ class Thought(models.Model):
     notes = models.TextField(blank=True, default='')
 
     def __str__(self):
-        return '{}: {}'.format(self.recorded_at, self.condition)
+        return '{}: {}'.format(self.recorded_at.strftime('%Y-%m-%d %H:%M:%S'), self.get_condition_display())
